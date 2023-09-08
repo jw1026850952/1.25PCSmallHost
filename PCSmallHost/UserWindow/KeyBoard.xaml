@@ -1,0 +1,25 @@
+﻿<Window x:Class="PCSmallHost.UserWindow.KeyBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="KeyBoard" Height="300" Width="250" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Viewbox Stretch="Fill">
+        <Canvas Height="300" Width="250" Background="#0F1629">
+            <TextBox Name="tbContent" Width="240" Foreground="#FFFFFF" FontSize="25" Canvas.Top="5" Canvas.Left="5"></TextBox>
+            <Polyline Margin="5,40,0,0" Width="240" Stretch="Fill"  Stroke="#FFFFFF" StrokeThickness="2" ></Polyline>
+            <Button Height="40" Width="60" Canvas.Top="55" Canvas.Left="5" Content="1" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="55" Canvas.Left="95" Content="2" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="55" Canvas.Left="185" Content="3" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="105" Canvas.Left="5" Content="4" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="105" Canvas.Left="95" Content="5" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="105" Canvas.Left="185" Content="6" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="155" Canvas.Left="5" Content="7" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="155" Canvas.Left="95" Content="8" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="155" Canvas.Left="185" Content="9" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="205" Canvas.Left="5" Content="0" FontSize="25" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnNumber_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="205" Canvas.Left="95" Content="清除" FontSize="14" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnClear_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="205" Canvas.Left="185" Content="退格" FontSize="14" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnSpaceBack_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="255" Canvas.Left="5" Content="确定" FontSize="14" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnOK_Click"></Button>
+            <Button Height="40" Width="60" Canvas.Top="255" Canvas.Left="95" Content="退出" FontSize="14" Foreground="#FFFFFF" Background="#5E7Ab9" Focusable="False" Click="btnExit_Click"></Button>
+        </Canvas>
+    </Viewbox>
+</Window>

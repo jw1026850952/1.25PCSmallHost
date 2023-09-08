@@ -1,0 +1,1890 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="NumberButtonBackground" Color="#5E7AB9"/>
+    <SolidColorBrush x:Key="InitializeButtonBackground" Color="#B1C8FC"/>    
+    <SolidColorBrush x:Key="UnClickedButtonBackground" Color="#1B3142"/>
+    <SolidColorBrush x:Key="ClickedButtonBackground" Color="#2E7A05"/>
+    <SolidColorBrush x:Key="UnClickedMuteSetConfirmButtonBackground" Color="#778899"/>
+    <SolidColorBrush x:Key="UnClickedIconSearchCodeButtonBackground" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ClickedIconSearchCodeButtonBackground" Color="#B0C4DE"/>   
+    <SolidColorBrush x:Key="UnClickedCheckSelfTestButtonBackground" Color="#282828"></SolidColorBrush>
+    <SolidColorBrush x:Key="ClickedCheckSelfTestButtonBackground" Color="#07B6F7"></SolidColorBrush>
+    <SolidColorBrush x:Key="UnClickedAlphabetButtonBackground" Color="#DFE5DF"></SolidColorBrush>
+    <SolidColorBrush x:Key="ClickedAlphabetButtonBackground" Color="#07B6F7"></SolidColorBrush>
+    <SolidColorBrush x:Key="CloseChineseKeyBoardButtonBackground" Color="#FE0101"></SolidColorBrush>
+    <SolidColorBrush x:Key="CommonFontForeground" Color="#FFFFFF"></SolidColorBrush>
+    <ImageBrush x:Key="buttonUnchecked" ImageSource="/Pictures/button.png"></ImageBrush>
+    <ImageBrush x:Key="buttonSelected" ImageSource="/Pictures/buttonSelected.png"></ImageBrush>
+    <ImageBrush x:Key="buttonSilencing" ImageSource="/Pictures/SilencingSettings-ok.png"></ImageBrush>
+    <ImageBrush x:Key="buttonSilencingSelected" ImageSource="/Pictures/SilencingSettingsSelected.png"></ImageBrush>
+    <ImageBrush x:Key="buttonEPSState" ImageSource="/Pictures/EPSState.png"></ImageBrush>
+    <ImageBrush x:Key="buttonEPSStateOK" ImageSource="/Pictures/EPSStateOK.png"></ImageBrush>
+    <ImageBrush x:Key="buttonPaging-Unchecked" ImageSource="/Pictures/Paging-Unchecked.png"></ImageBrush>
+    <ImageBrush x:Key="buttonPaging-Selected" ImageSource="/Pictures/Paging-Selected.png"></ImageBrush>
+    <ImageBrush x:Key="GraphicalInterfaceNoLogin-UnSelected" ImageSource="/Pictures/GraphicalInterfaceNoLogin-Unchecked.png"></ImageBrush>
+    <ImageBrush x:Key="GraphicalInterfaceNoLogin-Selected" ImageSource="/Pictures/GraphicalInterfaceNoLogin-checked.png"></ImageBrush>
+
+    <Style x:Key="ButtonStyle_EmergencyNoLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="5,0,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>     
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/EmergencyNoLogin.jpg" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>                                     
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EmergencyLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="125"></Setter>
+        <Setter Property="Margin" Value="5,5,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/EmergencyLogin.jpg" Height="60" Width="125" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MuteNoLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="70,-70,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/MuteNoLogin.jpg" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MuteLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="125"></Setter>
+        <Setter Property="Margin" Value="5,5,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/MuteLogin.jpg" Height="60" Width="125" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MuteSubMenu" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="50,30,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/MuteSubMenu.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EPSNoLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="5,10,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/EPSNoLogin.jpg" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EPSLogin" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/EPSLogin.jpg" Height="50" Width="120" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EPSData" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="280,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>       
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/EPSData.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SetCommunication" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="50,40,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>       
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/SetCommunication.png" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LightSummaryNoLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="70,-70,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/LightSummary.jpg" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LightLogin" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/LightLogin.jpg" Height="50" Width="120" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SingleLightControl" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="500,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>       
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/SingleLightControl.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LayerPatternNoLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="70,-70,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/LayerPatternNoLogin.jpg" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LayerPatternLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="730,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>       
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/LayerPatternLogin.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_ResetSystem" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="5,10,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/Reset.jpg" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_ExitSystem" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="5,10,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/ExitSystem.png" Height="70" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Login" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="125"></Setter>
+        <Setter Property="Margin" Value="5,10,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/Login.jpg" Height="70" Width="125" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MainSet" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="125"></Setter>
+        <Setter Property="Margin" Value="5,0,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/MainSet.jpg" Height="60" Width="125" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_TimeSet" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/TimeSet.jpg" Height="60" Width="60" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_DataCenter" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="280,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/DataCenter.png" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_PassWordSet" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="500,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/PassWordSet.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_CheckSelfTest" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="730,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>     
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/CheckSelfTest.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Initialize" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="50,50,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>        
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/Initialize.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LinkAge" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="730,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>   
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/LinkAge.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_HistoryRecord" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/HistoryRecord.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MonthCheckSet" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="280,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/MonthCheckSet.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SeasonCheckSet" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>
+        <Setter Property="Margin" Value="500,-150,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/YearCheckSet.jpg" Height="80" Width="80" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>   
+    
+    <Style x:Key="ButtonStyle_MenuCancel" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="125"></Setter>
+        <Setter Property="Margin" Value="5,5,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/MenuCancel.jpg" Height="60" Width="125" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_One" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="50,50,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>    
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="1" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>                           
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>                       
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="1"></Setter>
+    </Style>
+   
+    <Style x:Key="ButtonStyle_Two" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="185,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="2" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="2"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Three" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="320,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="3" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="3"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Four" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="455,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="4" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="4"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Five" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="590,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="5" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="5"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Six" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="730,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="6" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="6"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Seven" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="50,50,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="7" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="7"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Eight" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="185,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="8" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="8"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Nine" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="320,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="9" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="9"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LoginReturn" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="10,5,0,0" Content="返回" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Clear" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="590,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="15,5,0,0" Content="Cle" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Zero" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="455,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="30,5,0,0" Content="0" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="0"></Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Confirm" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="730,-60,0,0"></Setter>
+        <Setter Property="Background" Value="{StaticResource NumberButtonBackground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Focusable" Value="False"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="10" Background="{StaticResource NumberButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Label Margin="15,5,0,0" Content="OK" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CommonFontForeground}" HorizontalAlignment="Left"></Label>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>        
+    </Style>
+
+    <Style x:Key="ButtonStyle_MuteSetConfirm" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="50"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="Margin" Value="380,50,0,0"></Setter>
+        <Setter Property="Content" Value="确定"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="25"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedMuteSetConfirmButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SearchLight" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="20,5,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/SearchLight.jpg" Height="40" Width="90" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource InitializeButtonBackground}"></Setter>
+                            <Setter Property="BorderThickness" TargetName="border" Value="2"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource InitializeButtonBackground}"></Setter>
+                            <Setter Property="BorderThickness" TargetName="border" Value="2"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SearchEPS" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="Margin" Value="20,5,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>       
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/SearchEPS.png" Height="40" Width="90" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource InitializeButtonBackground}"></Setter>
+                            <Setter Property="BorderThickness" TargetName="border" Value="2"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource InitializeButtonBackground}"></Setter>
+                            <Setter Property="BorderThickness" TargetName="border" Value="2"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_CancelPlan" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="120"></Setter>
+        <Setter Property="Margin" Value="600,-80,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Image x:Name="image" Source="/Pictures/CancelPlan.png" Height="80" Width="120" Stretch="Fill"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EPSInstallPos" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="Margin" Value="235,-35,0,0"></Setter>
+        <Setter Property="Content" Value="保存"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>        
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>                           
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EPSPlan" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="Margin" Value="235,-35,0,0"></Setter>
+        <Setter Property="Content" Value="保存"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>       
+        <Setter Property="Padding" Value="1"/>  
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LightInstallPos" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="Margin" Value="300,-40,0,0"></Setter>
+        <Setter Property="Content" Value="保存"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>      
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LightBeginStatus" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="Margin" Value="300,-40,0,0"></Setter>
+        <Setter Property="Content" Value="保存"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_LightPlan" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="50"></Setter>
+        <Setter Property="Margin" Value="300,-40,0,0"></Setter>
+        <Setter Property="Content" Value="保存"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>      
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_JumpSelectFloor" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="70"></Setter>
+        <Setter Property="Margin" Value="610,-35,0,0"></Setter>
+        <Setter Property="Content" Value="GO"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource ClickedIconSearchCodeButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_ModifyTotalFloor" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="150"></Setter>
+        <Setter Property="Margin" Value="240,-35,0,0"></Setter>
+        <Setter Property="Content" Value="修改楼层数"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource ClickedIconSearchCodeButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_QueryIconSearchCode" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="100,-40,0,0"></Setter>
+        <Setter Property="Content" Value="查询"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource ClickedIconSearchCodeButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_ImportFloorDrawing" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="Margin" Value="100,-35,0,0"></Setter>
+        <Setter Property="Content" Value="导入图纸"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource ClickedIconSearchCodeButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource UnClickedIconSearchCodeButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EditIconSearchCode" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="210,-35,0,0"></Setter>
+        <Setter Property="Content" Value="编辑"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource ClickedIconSearchCodeButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource UnClickedIconSearchCodeButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SaveIconSearchCode" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Width" Value="60"></Setter>
+        <Setter Property="Margin" Value="280,-35,0,0"></Setter>
+        <Setter Property="Content" Value="保存"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="IsEnabled" Value="False"></Setter>        
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource ClickedIconSearchCodeButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource UnClickedIconSearchCodeButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_BackUpData" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Margin" Value="320,100,0,0"></Setter>
+        <Setter Property="Content" Value="数据备份"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedCheckSelfTestButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_RestoreBackUpData" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Margin" Value="320,200,0,0"></Setter>
+        <Setter Property="Content" Value="备份数据恢复"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedCheckSelfTestButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MonthCheckByHand" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Margin" Value="100,70,0,0"></Setter>
+        <Setter Property="Content" Value="手动月检"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>       
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedCheckSelfTestButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SeasonCheckByHand" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Margin" Value="520,-60,0,0"></Setter>
+        <Setter Property="Content" Value="手动年检"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>      
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedCheckSelfTestButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SystemSelfCheck" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Margin" Value="100,100,0,0"></Setter>
+        <Setter Property="Content" Value="自检"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Visibility" Value="Hidden"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedCheckSelfTestButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_MonthAndSeasonCheckSpeedUp" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Margin" Value="520,-60,0,0"></Setter>
+        <Setter Property="Content" Value="加速月检年检"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedCheckSelfTestButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_SilencingSettings" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="70"></Setter>
+        <Setter Property="Width" Value="250"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource buttonSilencing}" BorderThickness="0" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource buttonSilencingSelected}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GraphicalInterfaceNoLogin" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="150"></Setter>
+        <Setter Property="Margin" Value="30,-250,0,0"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource GraphicalInterfaceNoLogin-UnSelected}" BorderThickness="2" CornerRadius="20" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource GraphicalInterfaceNoLogin-Selected}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_Determine" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="45"></Setter>
+        <Setter Property="Width" Value="120"></Setter>
+        <Setter Property="FontSize" Value="25"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource buttonUnchecked}" BorderThickness="0" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource buttonSelected}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_EPSState" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="55"></Setter>
+        <Setter Property="Width" Value="110"></Setter>
+        <Setter Property="FontSize" Value="25"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource buttonEPSState}" BorderThickness="0" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource buttonEPSStateOK}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_OvalButton" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="30"></Setter>
+        <Setter Property="Width" Value="70"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource buttonPaging-Unchecked}" BorderThickness="0" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource buttonPaging-Selected}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ButtonStyle_Alphabet" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="80"></Setter>
+        <Setter Property="Width" Value="80"></Setter>       
+        <Setter Property="FontSize" Value="30"></Setter>      
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedAlphabetButtonBackground}" BorderBrush="Black" BorderThickness="1" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedAlphabetButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>   
+
+    <Style x:Key="ButtonStyle_CloseSystemKeyBoard" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Width" Value="30"></Setter>
+        <Setter Property="Margin" Value="990,0,0,0"></Setter>
+        <Setter Property="Content" Value="X"></Setter>
+        <Setter Property="FontSize" Value="25"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource CloseChineseKeyBoardButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyle_ExitCheckSelfTestFeedBack" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="60"></Setter>
+        <Setter Property="Width" Value="120"></Setter>
+        <Setter Property="Margin" Value="450,200,0,0"></Setter>
+        <Setter Property="Content" Value="退出"></Setter>
+        <Setter Property="FontSize" Value="30"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource CommonFontForeground}"></Setter>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{StaticResource UnClickedCheckSelfTestButtonBackground}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ClickedButtonBackground}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

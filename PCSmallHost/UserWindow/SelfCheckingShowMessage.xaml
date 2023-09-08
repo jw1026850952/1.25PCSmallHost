@@ -1,0 +1,8 @@
+﻿<Window x:Class="PCSmallHost.UserWindow.SelfCheckingShowMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelfCheckingShowMessage" Height="220" Width="420" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Canvas Height="220" Width="420" Margin="-5" Background="#CD5C5C">
+        <TextBlock Name="tbShowMessage" Height="100" Width="300" Canvas.Top="70" Canvas.Left="60" FontSize="30" FontFamily="Bold" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+    </Canvas>
+</Window>

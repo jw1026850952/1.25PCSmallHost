@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="PCSmallHost.UserWindow.SliderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="40" Background="Transparent">
+    <Viewbox Stretch="Fill">
+        <StackPanel Background="#00FF00">
+            <Canvas Height="380" Width="40">
+                <Border Height="450" Width="40" BorderBrush="#000000" BorderThickness="1" Background="#00FF00" HorizontalAlignment="Left">
+                    <StackPanel>
+                        <Slider Name="sdFloorDrawing" Height="430" Width="20" Margin="15,10,0,0" HorizontalAlignment="Left" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True"
+                        TickPlacement="Both" IsSelectionRangeEnabled="True" Minimum="1" Maximum="7" ></Slider>
+                        <Label Height="30" Width="20" Margin="0,-840,0,0" Content="7" FontSize="15" HorizontalAlignment="Left"></Label>
+                        <Label Height="30" Width="20" Margin="0,-710,0,0" Content="6" FontSize="15" HorizontalAlignment="Left"></Label>
+                        <Label Height="30" Width="20" Margin="0,-570,0,0" Content="5" FontSize="15" HorizontalAlignment="Left"></Label>
+                        <Label Height="30" Width="20" Margin="0,-430,0,0" Content="4" FontSize="15" HorizontalAlignment="Left"></Label>
+                        <Label Height="30" Width="20" Margin="0,-290,0,0" Content="3" FontSize="15" HorizontalAlignment="Left"></Label>
+                        <Label Height="30" Width="20" Margin="0,-155,0,0" Content="2" FontSize="15" HorizontalAlignment="Left"></Label>
+                        <Label Height="30" Width="20" Margin="0,-20,0,0" Content="1" FontSize="15" HorizontalAlignment="Left"></Label>
+                    </StackPanel>
+                </Border>
+            </Canvas>
+        </StackPanel>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="PCSmallHost.UserWindow.Login1"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="600" Width="1024" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="True">
+    <Viewbox Stretch="Fill">
+        <StackPanel Name="cvsMainWindow" Height="600" Width="1024" >
+            <Image Name="LoginImage" Stretch="Fill" Source="/Pictures/Login1.png"/>
+            <StackPanel Height="510" Width="510" Margin="-510,-540,0,0">
+                <Label Name="labTitle" Content="请输入密码！你共有三次机会" Height="35" Width="300" Margin="0,85,0,0" Foreground="#FFFFFF" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Image Name="imgLogo" Height="100" Width="100" Margin="10,30,0,0" Source="/Pictures/LoginLogo1.jpg"></Image>
+                <Image Height="50" Width="230" Margin="10,30,0,0" Source="/Pictures/LoginInput.png"></Image>
+                <PasswordBox Name="LoginInput" Height="50" Width="230" Margin="10,-50,0,0" Background="Transparent" BorderThickness="0" FontSize="35" Focusable="True" Foreground="#FFFFFF"></PasswordBox>
+            </StackPanel>
+            <StackPanel Height="510" Width="515" Margin="510,-540,0,0">
+                <Image Height="70" Width="70" Margin="-250,30,0,0" Source="/Pictures/NumButton.png" ></Image>
+                <Label Content="1" Height="60" Width="60" Margin="-250,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="0,-75,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="2" Height="60" Width="60" Margin="0,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="250,-75,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="3" Height="60" Width="60" Margin="250,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="-250,50,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="4" Height="60" Width="60" Margin="-250,-70,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="0,-70,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="5" Height="60" Width="60" Margin="0,-70,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="250,-70,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="6" Height="60" Width="60" Margin="250,-70,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click" ></Label>
+                <Image Height="70" Width="70" Margin="-250,50,0,0" Source="/pictures/NumButton.png"></Image>
+                <Label Content="7" Height="60" Width="60" Margin="-250,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="0,-70,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="8" Height="60" Width="60" Margin="0,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="250,-70,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="9" Height="60" Width="60" Margin="250,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="-250,40,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="返回" Height="50" Width="60" Margin="-250,-65,0,0" Foreground="#FFFFFF" FontSize="25" MouseLeftButtonUp="btnLoginReturn_Click"></Label>
+                <Image Height="70" Width="70" Margin="0,-70,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="0" Height="60" Width="60" Margin="0,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnPassWord_Click"></Label>
+                <Image Height="70" Width="70" Margin="250,-70,0,0" Source="/Pictures/NumButton.png"></Image>
+                <Label Content="ok" Height="60" Width="60" Margin="250,-75,0,0" Foreground="#FFFFFF" FontSize="30" HorizontalContentAlignment="Center" MouseLeftButtonDown="btnLoginConfirm_Click"></Label>
+
+                <StackPanel Name="ResetProgress" Height="50" Margin="0,10,0,0" Visibility="Hidden">
+                    <Label Content="系统复位中..." Height="45" Width="120" Margin="-280,0,0,0" Foreground="#FFFFFF" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"></Label>
+                    <ProgressBar Name="pgbResetSystem"  Height="30" Width="260"  Margin="180,-40,0,0" HorizontalAlignment="Left" Minimum="0" Maximum="100" />
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+    </Viewbox>
+</Window>

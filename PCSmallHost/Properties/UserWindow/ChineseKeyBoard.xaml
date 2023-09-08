@@ -1,0 +1,67 @@
+﻿<Window x:Class="PCSmallHost.UserWindow.ChineseKeyBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ChineseKeyBoard" Height="600" Width="1024" Background="Transparent" WindowStyle="None" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize">
+    <Canvas Height="600" Width="1024" Background="#999595">
+        <StackPanel Height="40" Width="1024">
+            <Button Style="{DynamicResource ButtonStyle_CloseSystemKeyBoard}" Click="CloseChineseKeyBoard_Click"></Button>
+        </StackPanel>
+
+        <StackPanel Height="40" Width="600" Canvas.Top="90" Canvas.Left="200">
+            <TextBox Name="tbxAddress" Height="40" Width="600" FontSize="25" HorizontalAlignment="Left" Focusable="True"></TextBox>
+        </StackPanel>
+
+        <StackPanel Height="50" Width="100" Canvas.Top="220" Canvas.Left="50">
+            <Label Name="labSpell" Height="50" Width="100" FontSize="25" Foreground="#07B6F7" HorizontalAlignment="Left"></Label>
+        </StackPanel>
+
+        <StackPanel Name="stpChineseBySpell" Height="50" Width="600" Margin="0,20,0,0" Canvas.Top="200" Canvas.Left="200"/>
+
+        <StackPanel Height="70" Width="100" Canvas.Top="200" Canvas.Left="900">
+            <Button Name="btnLastSpellPage" Height="70" Width="50" Content="&lt;" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#07B6F7" FontSize="30" HorizontalAlignment="Left" Focusable="False" Visibility="Hidden" Click="btnLastSpellPage_Click"/>
+            <Button Name="btnNextSpellPage" Height="70" Width="50" Content="&gt;" Margin="50,-70,0,0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Foreground="#07B6F7" FontSize="30" HorizontalAlignment="Left" Focusable="False" Visibility="Hidden" Click="btnNextSpellPage_Click"/>
+        </StackPanel>
+
+        <StackPanel Name="stpChineseKeyBoard" Height="320" Width="1024" Canvas.Top="275">
+            <Button Content="q" Margin="5,0,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="w" Margin="85,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="e" Margin="165,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="r" Margin="245,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="t" Margin="325,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="y" Margin="405,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="u" Margin="485,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="i" Margin="565,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="o" Margin="645,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="p" Margin="725,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="215" Content="DEL" Margin="805,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="60" Content="TB" Margin="5,0,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="a" Margin="65,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="s" Margin="145,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="d" Margin="225,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="f" Margin="305,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="g" Margin="385,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="h" Margin="465,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="j" Margin="545,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="k" Margin="625,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="l" Margin="705,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="235" Content="OK" Margin="785,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="125" Content="CAPS" Margin="5,0,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="z" Margin="130,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="x" Margin="210,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="c" Margin="290,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="v" Margin="370,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="b" Margin="450,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="n" Margin="530,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="m" Margin="610,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="," Margin="690,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Content="." Margin="770,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="170" Content=":" Margin="850,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="80" Content="123" Margin="5,0,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="80" Content="中" Margin="85,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="615" Content="SPACE" Margin="165,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="80" Content="&lt;" Margin="780,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="80" Content="&gt;" Margin="860,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+            <Button Height="80" Width="80" Content="?" Margin="940,-80,0,0" Style="{DynamicResource ButtonStyle_Alphabet}" Click="Alphabet_Click"/>
+        </StackPanel>
+    </Canvas>
+</Window>

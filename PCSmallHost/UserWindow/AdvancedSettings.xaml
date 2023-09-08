@@ -1,0 +1,174 @@
+﻿<Window x:Class="PCSmallHost.UserWindow.AdvancedSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="高级设置" Height="470" Width="300" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" ShowInTaskbar="False">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+                <Setter Property="Width" Value="35"/>
+                <Setter Property="Height" Value="15"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                            <!--定义视觉树-->
+                            <Border x:Name="border" BorderThickness="1.5" CornerRadius="9" BorderBrush="#aaa" Background="#2790ff">
+                                <!--阴影设置-->
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="0" Opacity="0.5" />
+                                </Border.Effect>
+                                <Grid x:Name="togglebutton" HorizontalAlignment="Right" >
+                                    <Border Width="12" Height="12" CornerRadius="9" Background="White"/>
+                                </Grid>
+                            </Border>
+                            <!--定义触发器-->
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="false">
+                                    <Setter TargetName="border" Property="Background" Value="#ccc"/>
+                                    <Setter TargetName="togglebutton" Property="HorizontalAlignment" Value="Left"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignOutlinedComboBox}">
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="ItemTemplate">
+                    <Setter.Value>
+                        <DataTemplate DataType="string">
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="211*"/>
+            <RowDefinition Height="136*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="应急设置" Height="70" VerticalAlignment="Center">
+            <DockPanel VerticalAlignment="Top" Background="White">
+                <TextBlock Text="EPS断通讯启动应急" HorizontalAlignment="Left" FontSize="16" Foreground="#FF000000"/>
+                <ToggleButton x:Name="EmergencySwitch" Width="50" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="Default ToggleButton Style" Checked="EmergencySwitch_Checked" Unchecked="EmergencySwitch_Unchecked"/>
+                <!--<ToggleButton Style="{StaticResource ToggleButtonStyle}" IsChecked="{Binding ToggleBtnIsCheck}" HorizontalAlignment="Right"/>-->
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Header="数据备份" Height="200" Margin="0,11,0,0" VerticalAlignment="Top" Background="Gray" Grid.Row="1" Grid.RowSpan="2">
+            <Grid>
+                <Menu Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                    <MenuItem Name="auto" Padding="0" Height="30" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <!--<MenuItem.Header>
+                            <Button Name="txt" Height="30" Width="50" Content="自动" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13" MouseDown="txt_MouseDown"></Button>
+                        </MenuItem.Header>-->
+                        <MenuItem.Template>
+                            <ControlTemplate TargetType="{x:Type MenuItem}">
+                                <Label Name="txt" Padding="2,2,2,2" Content="自动" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="LightGray" MouseDown="txt_MouseDown"/>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="TRUE">
+                                        <Setter TargetName="txt" Property="Background" Value="Azure" />
+                                        <Setter TargetName="txt" Property="Padding" Value="2,2,2,2" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed"  Value="TRUE">
+                                        <Setter TargetName="txt" Property="Background" Value="White"/>
+                                        <Setter TargetName="txt" Property="Padding" Value="2,2,2,2"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </MenuItem.Template>
+                    </MenuItem>
+                    <MenuItem Name="manu" Height="30" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <MenuItem.Template>
+                            <ControlTemplate TargetType="{x:Type MenuItem}">
+                                <Label Name="ManualMute" Padding="2,2,2,2" Content="手动" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="LightGray" MouseDown="ManualMute_MouseDown"/>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="TRUE">
+                                        <Setter TargetName="ManualMute" Property="Background" Value="Azure" />
+                                        <Setter TargetName="ManualMute" Property="Padding" Value="2,2,2,2" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="TRUE">
+                                        <Setter TargetName="ManualMute" Property="Background" Value="White" />
+                                        <Setter TargetName="ManualMute" Property="Padding" Value="2,2,2,2"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </MenuItem.Template>
+                    </MenuItem>
+                </Menu>
+                <StackPanel x:Name="Automatic" Height="130" Margin="0,23,0,0" Background="White" VerticalAlignment="Top"  Visibility="Visible">
+                    <DockPanel Margin="5,10,5,0" VerticalAlignment="Top">
+                        <Label Content="快照间隔时间" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="IntervalTime" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="间隔时间" Width="150" ForceCursor="True"></ComboBox>
+                    </DockPanel>
+                    <DockPanel Margin="5">
+                        <Label Content="保存地址" VerticalAlignment="Center"></Label>
+                        <Label Height="13" Width="13" Margin="0,5,0,0" ToolTip="选择backup文件夹，或者选择任意一个文件夹并自动新建backup文件夹">
+                            <materialDesign:PackIcon Kind="AlertCircleOutline" Height="13" Width="13" Margin="-5"/>
+                        </Label>
+                        <TextBox x:Name="SaveAddress" Text="" Width="130" Margin="25,0,0,0"></TextBox>
+                        <Button Name="btnBackUpPath" Height="15" Width="30" HorizontalAlignment="Right" Padding="0" Click="btnSelectPath_Click">
+                            <materialDesign:PackIcon Kind="DotsHorizontal" Height="20" Width="20" Margin="0,-2,0,0"/>
+                        </Button>
+                    </DockPanel>
+                    <DockPanel Margin="5">
+                        <Label Content="开启自动备份" VerticalAlignment="Center"></Label>
+                        <ToggleButton x:Name="IsAutomaticBackups" Width="50" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="Default ToggleButton Style" IsChecked="False" Checked="IsAutomaticBackups_Checked"/>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Name="Manual" Grid.RowSpan="2" Height="130" Margin="0,23,0,0" Background="White" Visibility="Hidden">
+                    <DockPanel Margin="5,20,5,0">
+                        <Label Content="保存地址:" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <TextBox x:Name="ManualPath" Width="130" Margin="35,0,0,0"></TextBox>
+                        <Button x:Name="btnManual" Height="15" Width="30" HorizontalAlignment="Right" Padding="0" Click="btnSelectPath_Click">
+                            <materialDesign:PackIcon Kind="DotsHorizontal" Height="20" Width="20" Margin="0,-2,0,0"/>
+                        </Button>
+                    </DockPanel>
+                    <DockPanel Margin="5,20,5,0">
+                        <Button x:Name="btnSaveManually" Height="30" Width="100" Padding="0" Click="btnSaveManually_Click">
+                            <DockPanel Width="100">
+                                <materialDesign:PackIcon Kind="BackupRestore" Margin="20,0,0,0"/>
+                                <Label Content="保存数据" Width="50" FontSize="10" Foreground="#FFFFFF" Margin="-10,-3,0,0"></Label>
+                            </DockPanel>
+                        </Button>
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="恢复数据" Margin="0,11,0,0" VerticalAlignment="Top" Background="Gray" Grid.Row="2" Height="125" Grid.RowSpan="2">
+            <StackPanel Background="White">
+                <DockPanel Margin="5">
+                    <Label Content="选择数据文件" HorizontalAlignment="Left"></Label>
+                    <TextBox x:Name="FilePath" Width="130" Margin="15,0,0,0"></TextBox>
+                    <Button x:Name="btnRestorePath" Height="15" Width="30" HorizontalAlignment="Right" Padding="0" Click="btnRestorePath_Click">
+                        <materialDesign:PackIcon Kind="DotsHorizontal" Height="20" Width="20" Margin="0,-2,0,0"/>
+                    </Button>
+                </DockPanel>
+                <DockPanel Margin="5">
+                    <Button x:Name="btnRestoreData" Height="30" Width="100" Padding="0" Click="btnRestoreData_Click">
+                        <DockPanel Width="100">
+                            <materialDesign:PackIcon Kind="FileRestore" Margin="20,2,0,0"/>
+                            <Label Content="数据恢复" Width="50" FontSize="10" Foreground="#FFFFFF" Margin="-10,0,0,0"></Label>
+                        </DockPanel>
+                    </Button>
+                </DockPanel>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Margin="0,400,0,0" Grid.RowSpan="4">
+            <Button x:Name="btnSettingsOK" Content="确定" Padding="0" Height="25" Width="40" Margin="130,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnSettingsOK_Click"></Button>
+            <Button x:Name="btnSettingCancel" Content="取消" Padding="0" Height="25" Width="40" Margin="180,-25,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnSettingCancel_Click"></Button>
+            <Button x:Name="btnSettingApply" Content="应用" Padding="0" Height="25" Width="40" Margin="230,-25,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnSettingApply_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

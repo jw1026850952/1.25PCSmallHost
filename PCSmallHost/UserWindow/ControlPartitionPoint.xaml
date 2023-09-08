@@ -1,0 +1,98 @@
+﻿<Window x:Class="PCSmallHost.UserWindow.ControlPartitionPoint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="ControlPartitionPoint" Height="150" Width="300" 
+        Background="#0F1629"
+        Foreground="#FFFFFF"
+        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" ShowInTaskbar="False">
+   
+    <!--<Viewbox Stretch="Fill">-->
+        <!--<Canvas x:Name="PartitionPointSet" Height="500" Width="700" Background="#0F1629">
+            <Label Height="150" Width="200" Canvas.Top="44" Content="报警点" FontSize="50" Foreground="#FFFFFF" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <ComboBox 
+                Name="cbxSetPartitionPoint" 
+                Height="130" Width="170" 
+                Background="White" Canvas.Top="64" 
+                Canvas.Left="185" 
+                FontSize="40" HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center"
+                Style="{StaticResource MaterialDesignFilledComboBox}"></ComboBox>
+            <Label Content="所在线路：" Height="150" Width="200" FontSize="40" Foreground="#FFFFFF" Canvas.Top="269"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="10"></Label>
+            <ComboBox 
+                Name="cbxSetEscapeLine" 
+                Height="130" Width="170" FontSize="40" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Background="#FFFFFF" 
+                Canvas.Top="289" Canvas.Left="185" 
+                SelectionChanged="LineName_SelectionChanged"
+                Style="{StaticResource MaterialDesignFilledComboBox}"></ComboBox>
+            <Button Height="120" Width="200" Content="绑定" Canvas.Top="25" Canvas.Left="390" FontSize="40" Focusable="False" Click="btnBinding_Click"></Button>
+            <Button Height="120" Width="200" Content="确定" Canvas.Top="175" Canvas.Left="390" FontSize="40" Focusable="False" Click="btnConfirm_Click"></Button>
+            <Button Height="120" Width="200" Content="移除" Canvas.Top="335" Canvas.Left="390" FontSize="40" Focusable="False" Click="btnRemove_Click"></Button>
+        </Canvas>-->
+        
+    <!--</Viewbox>-->
+    <Grid x:Name="PartitionPointSet">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>-->
+        <StackPanel
+            VerticalAlignment="Center">
+            <ComboBox 
+                x:Name="cbxSetPartitionPoint"
+                Height="50" Width="120"
+                Margin="5" FontSize="14"
+                BorderBrush="#FFF"
+                materialDesign:HintAssist.Hint="报警器"
+                materialDesign:HintAssist.Foreground="#FFFFFF"
+                materialDesign:HintAssist.Background="#0F1629"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
+            <ComboBox 
+                x:Name="cbxSetEscapeLine"
+                Width="120" Height="50"
+                Margin="5"
+                FontSize="14"
+                BorderBrush="#FFF"
+                materialDesign:HintAssist.Hint="所在路线"
+                materialDesign:HintAssist.Foreground="#FFFFFF"
+                materialDesign:HintAssist.Background="#0F1629"
+                SelectionChanged="LineName_SelectionChanged"
+                Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
+        </StackPanel>
+        <StackPanel 
+            Grid.Column="1"
+            VerticalAlignment="Center">
+            <Button 
+                Height="40" Width="100" 
+                Margin="5"
+                Content="绑定" FontSize="18"
+                Focusable="False" 
+                Click="btnBinding_Click"/>
+            <Button 
+                Height="40" Width="100"
+                Margin="5"
+                Content="确定"
+                FontSize="18" 
+                Focusable="False" 
+                Click="btnConfirm_Click"/>
+            <Button 
+                Height="40" Width="100"
+                Margin="5"
+                Content="移除"
+                FontSize="18" 
+                Focusable="False" 
+                Click="btnRemove_Click"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>
